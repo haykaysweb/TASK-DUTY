@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "../Pages/Home/Home";
-import EditTask from "../Pages/Task/editTask";
+import EditTask from "../Pages/Task/EditTask"
 import Newtask from "../Pages/Task/Newtask";
 import Mytask from "../Pages/Task/Mytask";
 import Rootlayout from "../Layout/Rootlayout";
+
 
 export default function AppRoutes() {
   const route = [
