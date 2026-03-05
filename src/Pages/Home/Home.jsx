@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center">
+    <main className="md:min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center">
           <div className="text-center md:text-left space-y-2">
