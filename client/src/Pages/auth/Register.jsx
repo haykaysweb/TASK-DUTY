@@ -52,11 +52,11 @@ export default function Register() {
             className="w-[157px] h-[41px]"
           />
         </NavLink>
-        <h2 className="text-3xl font-bold mt-6">Register</h2>
+        <h2 className="text-3xl font-bold mt-10">Register</h2>
         <p className="mb-4">Enter Your Information To Create An Account</p>
 
         <form
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-5 mt-10"
           onSubmit={handleSubmit(onSubmitForm)}
         >
           <input

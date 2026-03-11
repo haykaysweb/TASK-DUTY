@@ -53,11 +53,11 @@ export default function Login() {
             className="w-[157px] h-[41px]"
           />
         </NavLink>
-        <h2 className="text-3xl font-bold  mt-6">Login</h2>
+        <h2 className="text-3xl font-bold  mt-10">Login</h2>
         <p className="mb-4">Login Into Your Account</p>
 
         <form
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-5 mt-10"
           onSubmit={handleSubmit(onSubmitForm)}
         >
           <input

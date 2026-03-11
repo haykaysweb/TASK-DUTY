@@ -16,7 +16,7 @@ export default function AuthLayout() {
           }}
         ></div>
       </div>
-      <div className="col-span-12 md:col-span-6 p-4 bg-white">
+      <div className="col-span-12 md:col-span-6 bg-white">
         <Outlet />
       </div>
     </section>

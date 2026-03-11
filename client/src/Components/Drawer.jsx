@@ -49,7 +49,7 @@ export default function Drawer({ handleLogout }) {
               </NavLink>
             </div>
 
-            <div className="h-[calc(100vh-100px)]">
+            <div className="h-[calc(100vh-150px)]">
               {user ? (
                 <div>
                   <div className="mt-5 text-lg font-semibold">
@@ -89,9 +89,9 @@ export default function Drawer({ handleLogout }) {
                 {" "}
                 <div>
               
-                  <div className="flex items-center gap-2  p-2">
+                  <div className="flex items-center gap-2 p-2">
                     <LogOut />
-                    <a onClick={handleLogout}>Logout</a>
+                    <a onClick={handleLogout} className="text-lg font-bold">Logout</a>
                   </div>
                 </div>
               </>
