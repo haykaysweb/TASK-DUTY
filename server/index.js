@@ -17,7 +17,7 @@ const httpServer = createServer(app);
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "https://task-duty-seven.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     optionsSuccessStatus: 200,
