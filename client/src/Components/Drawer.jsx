@@ -32,7 +32,7 @@ export default function Drawer({ handleLogout }) {
             className="drawer-overlay"
             onClick={() => setIsOpen(false)}
           ></label>
-          <div className="relative menu bg-white text-black min-h-screen w-90">
+          <div className="relative menu bg-white text-black h-screen w-90">
             <button
               className="absolute right-0 top-3 btn btn-circle btn-sm btn-ghost"
               onClick={() => setIsOpen(false)}
@@ -49,7 +49,7 @@ export default function Drawer({ handleLogout }) {
               </NavLink>
             </div>
 
-            <div className="h-[calc(100vh-100px)] overflow-y-hidden-hidden">
+            <div className="h-[calc(100vh-100px)]">
               {user ? (
                 <div>
                   <div className="mt-5 text-lg font-semibold">
