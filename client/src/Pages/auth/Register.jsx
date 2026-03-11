@@ -53,7 +53,7 @@ export default function Register() {
         <p className="mb-4">Enter Your Information To Create An Account</p>
 
         <form
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-5"
           onSubmit={handleSubmit(onSubmitForm)}
         >
           <input
