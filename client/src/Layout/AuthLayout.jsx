@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 
 export default function AuthLayout() {
   return (
-    <section className="grid grid-cols-12 items-center justify-center min-h-screen">
+    <section className="grid grid-cols-12 items-center justify-center h-screen lg:min-h-screen overflow-hidden">
       <div className="hidden md:block col-span-6 h-full">
         <div
           className=""

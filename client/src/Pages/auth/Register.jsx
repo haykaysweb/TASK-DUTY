@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { validateRegisterUserSchema } from "../../utils/dataSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -10,6 +10,8 @@ import { registerUser } from "../../api/auth";
 
 export default function Register() {
   const [revealPassword, setRevealPassword] = useState(false);
+  const navigate = useNavigate();
+
   const {
     handleSubmit,
     register,
@@ -25,6 +27,7 @@ export default function Register() {
     mutationFn: registerUser,
     onSuccess: (res) => {
       toast.success(res.data.message || "Registration successful");
+      navigate("auth/login");
     },
     onError: (error) => {
       import.meta.env.DEV && console.error(error);
