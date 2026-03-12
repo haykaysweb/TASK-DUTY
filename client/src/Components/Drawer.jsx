@@ -52,7 +52,7 @@ export default function Drawer({ handleLogout }) {
             <div className="">
               {user ? (
                 <div>
-                  <div className="mt-5 text-lg font-semibold upppercase">
+                  <div className="mt-5 text-lg font-semibold uppercase">
                     <p>Hi, {user?.username}</p>
                     <hr className="text-[#980ffa] mt-2" />
                   </div>
