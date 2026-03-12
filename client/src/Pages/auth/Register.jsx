@@ -27,7 +27,7 @@ export default function Register() {
     mutationFn: registerUser,
     onSuccess: (res) => {
       toast.success(res.data.message || "Registration successful");
-      navigate("/giauth/login");
+      navigate("/auth/login");
     },
     onError: (error) => {
       import.meta.env.DEV && console.error(error);
