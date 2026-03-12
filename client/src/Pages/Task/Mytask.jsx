@@ -5,10 +5,10 @@ export default function Mytask() {
     <div className="container mx-auto md:mt-10">
       <div className="flex items-center justify-between p-5">
         <h1 className="text-3xl font-medium">My Task</h1>
-        <div className="flex items-center space-x-2">
+        <Link to="/auth/newtask" className="flex items-center space-x-2">
           <img src="/fluent_add-24-filled.png" alt="" />
           <h1 className="text-purple-500 font-medium">Add New Task</h1>
-        </div>
+        </Link>
       </div>
       {/* boxed content start */}
       <div className="grid sm:grid-cols-1 md:flex flex-col px-5 gap-6 md:mt-5">

@@ -7,7 +7,7 @@ export default function Rootlayout() {
       <>
       <Nav />
       <hr className="text-gray-300" />
-  
+
      <Outlet/>
     </>
   )
