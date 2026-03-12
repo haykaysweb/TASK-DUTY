@@ -87,7 +87,7 @@ export default function Drawer({ handleLogout }) {
             {user ? (
               <>
                 {" "}
-                <div className="absolute bottom-10">
+                <div className="absolute bottom-0">
                   <div className="flex items-center gap-2 p-2">
                     <LogOut />
                     <a onClick={handleLogout} className="text-lg font-bold">
