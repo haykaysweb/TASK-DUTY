@@ -18,11 +18,11 @@ export default function Mytask() {
             <Link to="/auth/edittask" className="flex items-center gap-4">
               <div className="flex gap-2 bg-purple-500 px-2 py-1 rounded-sm text-white">
                 <img src="/clarity_note-edit-line (1) - Copy.png" alt="" />
-                <buton>Edit</buton>
+                <button>Edit</button>
               </div>
               <div className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500">
                 <img src="/fluent_delete-24-regular.png" alt="" />
-                <buton>Delete</buton>
+                <button>Delete</button>
               </div>
             </Link>
           </div>
@@ -45,11 +45,11 @@ export default function Mytask() {
             <Link to="/auth/edittask" className="flex items-center gap-4">
               <div className="flex gap-2 bg-purple-500 px-2 py-1 rounded-sm text-white">
                 <img src="/clarity_note-edit-line (1) - Copy.png" alt="" />
-                <buton>Edit</buton>
+                <button>Edit</button>
               </div>
               <div className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500">
                 <img src="/fluent_delete-24-regular.png" alt="" />
-                <buton>Delete</buton>
+                <button>Delete</button>
               </div>
             </Link>
           </div>
@@ -72,11 +72,11 @@ export default function Mytask() {
             <Link to="/auth/edittask" className="flex items-center gap-4">
               <div className="flex gap-2 bg-purple-500 px-2 py-1 rounded-sm text-white">
                 <img src="/clarity_note-edit-line (1) - Copy.png" alt="" />
-                <buton>Edit</buton>
+                <button>Edit</button>
               </div>
               <div className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500">
                 <img src="/fluent_delete-24-regular.png" alt="" />
-                <buton>Delete</buton>
+                <button>Delete</button>
               </div>
             </Link>
             {/* edit and delete icons section ends here  */}
@@ -98,11 +98,11 @@ export default function Mytask() {
             <Link to="/auth/edittask" className="flex items-center gap-4">
               <div className="flex gap-2 bg-purple-500 px-2 py-1 rounded-sm text-white">
                 <img src="/clarity_note-edit-line (1) - Copy.png" alt="" />
-                <buton>Edit</buton>
+                <button>Edit</button>
               </div>
               <div className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500">
                 <img src="/fluent_delete-24-regular.png" alt="" />
-                <buton>Delete</buton>
+                <button>Delete</button>
               </div>
             </Link>
           </div>

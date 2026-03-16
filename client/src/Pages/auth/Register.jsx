@@ -106,7 +106,7 @@ export default function Register() {
             {mutation.isPending ? (
               <>
                 <Loader className="animate-spin" size={18} />
-                Signin up{" "}
+                Signing up{" "}
               </>
             ) : (
               "Sign Up"
