@@ -36,7 +36,7 @@ export default function AppRoutes() {
           ),
         },
         {
-          path: "auth/editTask",
+          path: "auth/editTask/:id",
           element: (
             <PrivateRoute accessToken={accessToken}>
               <EditTask />
