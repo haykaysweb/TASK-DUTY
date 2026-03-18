@@ -16,7 +16,7 @@ const taskSchema = new Schema(
     tag: {
       type: String,
       default: "Pick a tag",
-      trim: true,
+      required: true,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,

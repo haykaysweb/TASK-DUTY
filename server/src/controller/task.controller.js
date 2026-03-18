@@ -1,4 +1,4 @@
-import Task from "../model/task.model.js"
+import Task from "../model/task.model.js";
 import responseHandler from "../utils/responseHandler.js";
 
 //create new task
