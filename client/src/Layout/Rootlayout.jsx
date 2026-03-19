@@ -1,8 +1,8 @@
-import { Link, Outlet } from "react-router";
+import {  Outlet } from "react-router";
 import Nav from "../Components/Nav";
 
 
-export default function Rootlayout() {
+export default function RootLayout() {
   return (
       <>
       <Nav />
