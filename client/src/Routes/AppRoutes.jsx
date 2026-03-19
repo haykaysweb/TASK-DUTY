@@ -16,7 +16,7 @@ import Spinner from "../Components/Spinner";
 import { useAuth } from "../hooks/useAuth";
 
 export default function AppRoutes() {
-  const { accessToken } = useAuth();
+  const { accessToken } = useAuth(); 
   const route = [
     {
       path: "/",
