@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Nav from "../Components/Nav";
 
-export default function RootLayout() {
+export default function Rootlayout() {
   return (
     <>
       <Nav />

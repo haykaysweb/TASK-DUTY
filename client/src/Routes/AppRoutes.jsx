@@ -3,7 +3,7 @@ import { PrivateRoute, PublicRoute } from "./ProtectedRoute";
 import { Suspense, lazy } from "react";
 
 const AuthLayout = lazy(() => import("../Layout/AuthLayout"));
-const RootLayout = lazy(() => import("../Layout/RootLayout"));
+const Rootlayout = lazy(() => import("../Layout/Rootlayout"));
 const Register = lazy(() => import("../Pages/auth/Register"));
 const Login = lazy(() => import("../Pages/auth/Login"));
 const Home = lazy(() => import("../Pages/Home/Home"));
@@ -23,7 +23,7 @@ export default function AppRoutes() {
       path: "/",
       element: (
         <Suspense fallback={<Spinner />}>
-          <RootLayout />
+          <Rootlayout />
         </Suspense>
       ),
       children: [
