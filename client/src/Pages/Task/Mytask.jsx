@@ -119,7 +119,7 @@ export default function Mytask() {
                         alt="delete"
                         className="w-4 h-4"
                       />
-                      <span>{deleteMutation.isPending ? <><Loader/></> : "Delete"}</span>
+                      <span>{deleteMutation.isPending ? <><Loader className="animate-spin"/></> : "Delete"}</span>
                     </button>
                   </div>
                 </div>
