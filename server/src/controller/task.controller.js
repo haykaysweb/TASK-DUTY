@@ -107,7 +107,7 @@ export const deleteTask = async (req, res, next) => {
     return responseHandler.successResponse(
       res,
       null,
-      "Task deleted succesfully",
+      "Task deleted successfully",
       200,
     );
   } catch (error) {
