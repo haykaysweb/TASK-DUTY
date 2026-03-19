@@ -73,7 +73,7 @@ export default function EditTask() {
       </div>
 
       <form 
-        className="relative flex flex-col p-5 gap-10 w-full"
+        className="relative flex flex-col p-5 gap-9 w-full"
         onSubmit={(e) => e.preventDefault()}
       >
         {/* Title Input */}
