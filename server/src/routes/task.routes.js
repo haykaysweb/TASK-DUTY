@@ -6,18 +6,17 @@ import {
   deleteTask,
 } from "../controller/task.controller.js";
 
-import { rateLimiter } from "../middleware/rateLimit.js";
 import { authenticate } from "../middleware/authenticate.js";
 
 const router = Router();
 
 
-router.post("/create", authenticate, rateLimiter(10), createTask);
+router.post("/create", authenticate, createTask);
 
 
 router.get("/get", authenticate, getTasks);
 
-router.patch("/update/:id", authenticate, rateLimiter(20), updateTask);
+router.patch("/update/:id", authenticate, updateTask);
 
 router.delete("/delete/:id", authenticate, deleteTask);
 

@@ -1,15 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "../Pages/Home/Home";
-import EditTask from "../Pages/Task/EditTask";
-import Newtask from "../Pages/Task/Newtask";
-import Mytask from "../Pages/Task/Mytask";
-import Rootlayout from "../Layout/Rootlayout";
-import AuthLayout from "../Layout/AuthLayout";
-import Register from "../Pages/auth/Register";
-import Login from "../Pages/auth/Login";
-import { Suspense } from "react";
-import Spinner from "../Components/Spinner";
 import { PrivateRoute, PublicRoute } from "./ProtectedRoute";
+import { Suspense, lazy } from "react";
+
+const AuthLayout = lazy(() => import("../Layout/AuthLayout"));
+const RootLayout = lazy(() => import("../Layout/RootLayout"));
+const Register = lazy(() => import("../Pages/auth/Register"));
+const Login = lazy(() => import("../Pages/auth/Login"));
+const Home = lazy(() => import("../Pages/Home/Home"));
+
+const Mytask = lazy(() => import("../Pages/Task/Mytask"));
+const Newtask = lazy(() => import("../Pages/Task/Newtask"));
+const EditTask = lazy(() => import("../Pages/Task/EditTask"));
+
+import Spinner from "../Components/Spinner";
 import { useAuth } from "../hooks/useAuth";
 
 export default function AppRoutes() {
@@ -19,7 +22,7 @@ export default function AppRoutes() {
       path: "/",
       element: (
         <Suspense fallback={<Spinner />}>
-          <Rootlayout />
+          <RootLayout />
         </Suspense>
       ),
       children: [
