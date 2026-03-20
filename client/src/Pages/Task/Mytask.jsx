@@ -4,13 +4,17 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getTasks, deleteTask } from "../../api/task";
 import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-toastify";
-import { Loader, Search, X } from "lucide-react";
+import { Loader, Search, X, AlertCircle } from "lucide-react";
 
 export default function Mytask() {
   const { accessToken } = useAuth();
   const queryClient = useQueryClient();
 
   const [searchParams, setSearchParams] = useState("");
+
+  // Modal States
+  const [showModal, setShowModal] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState(null);
 
   const { data, isLoading } = useQuery({
     queryKey: ["tasks", searchParams],
@@ -25,6 +29,9 @@ export default function Mytask() {
     onSuccess: (res) => {
       toast.success(res.data.message || "Task deleted successfully");
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
+
+      setShowModal(false);
+      setTaskToDelete(null);
     },
     onError: (error) => {
       import.meta.env.DEV && console.error(error);
@@ -32,6 +39,11 @@ export default function Mytask() {
     },
   });
 
+  // Handler to trigger the modal
+  const confirmDelete = (id) => {
+    setTaskToDelete(id);
+    setShowModal(true);
+  };
 
   if (isLoading && !searchParams) {
     return (
@@ -43,7 +55,7 @@ export default function Mytask() {
 
   return (
     <>
-      <div className="container mx-auto md:mt-5">
+      <div className="container mx-auto md:mt-5 relative">
         <div className="flex items-center justify-between p-5">
           <h1 className="text-3xl font-medium">My Task</h1>
           <Link to="/auth/newtask" className="flex items-center space-x-2">
@@ -52,7 +64,7 @@ export default function Mytask() {
           </Link>
         </div>
 
-        {/* Search Field Design */}
+        {/* Search Field */}
         <div className="px-5 mb-5">
           <div className="relative w-full max-w-md">
             <Search
@@ -76,6 +88,7 @@ export default function Mytask() {
           </div>
         </div>
 
+        {/* Task List */}
         <div className="grid sm:grid-cols-1 md:flex flex-col px-5 gap-6 md:mt-5">
           {tasks.length === 0 ? (
             <p className="text-center text-gray-500 py-10">
@@ -109,17 +122,17 @@ export default function Mytask() {
                       <span>Edit</span>
                     </Link>
 
+                    {/* Trigger Confirmation Modal */}
                     <button
-                      disabled={deleteMutation.isPending}
-                      onClick={() => deleteMutation.mutate(task._id)}
-                      className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500 items-center cursor-pointer disabled:opacity-50"
+                      onClick={() => confirmDelete(task._id)}
+                      className="flex gap-2 border border-purple-500 px-2 py-1 rounded-sm text-purple-500 items-center cursor-pointer hover:bg-purple-50 transition-colors"
                     >
                       <img
                         src="/fluent_delete-24-regular.png"
                         alt="delete"
                         className="w-4 h-4"
                       />
-                      <span>{deleteMutation.isPending ? <><Loader className="animate-spin"/></> : "Delete"}</span>
+                      <span>Delete</span>
                     </button>
                   </div>
                 </div>
@@ -139,12 +152,52 @@ export default function Mytask() {
           )}
         </div>
 
+        {/* Back to Top */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="w-full text-center py-5 underline text-purple-500"
         >
           Back to top
         </button>
+
+        {showModal && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+            <div className="bg-white rounded-lg p-6 w-full max-w-sm shadow-2xl animate-in fade-in zoom-in duration-200">
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-red-100 p-3 rounded-full mb-4">
+                  <AlertCircle className="text-red-600" size={30} />
+                </div>
+                <h2 className="text-xl font-bold text-gray-800">
+                  Are you sure?
+                </h2>
+                <p className="text-gray-500 mt-2">
+                  This task will be permanently removed. This action cannot be
+                  undone.
+                </p>
+              </div>
+
+              <div className="flex gap-3 mt-8">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="flex-1 py-2.5 border border-gray-300 rounded-md font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  Keep Task
+                </button>
+                <button
+                  onClick={() => deleteMutation.mutate(taskToDelete)}
+                  disabled={deleteMutation.isPending}
+                  className="flex-1 py-2.5 bg-red-600 text-white rounded-md font-medium hover:bg-red-700 disabled:opacity-50 flex justify-center items-center shadow-md shadow-red-100"
+                >
+                  {deleteMutation.isPending ? (
+                    <Loader className="animate-spin" size={20} />
+                  ) : (
+                    "Delete"
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
